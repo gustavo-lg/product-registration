@@ -79,11 +79,12 @@ class App extends Component {
     return(
       <div className="App">
         <h1>Product Manager</h1>
-
+        <hr/>
+        
         <AddProduct
           onAdd={this.onAdd}
         />
-
+        <h1>Products List</h1>
         {
           this.state.products.map(product => {
             return (

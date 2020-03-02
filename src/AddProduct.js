@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import './AddProduct.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+
 
 
 class AddProduct extends Component {
@@ -20,12 +24,12 @@ class AddProduct extends Component {
     render(){
         
         return(
-            <form onSubmit={this.onSubmit}>
+            <form className="AddProductForm" onSubmit={this.onSubmit}>
                 <div>
                     <h3>Add Product</h3>
                     <input placeholder="Name" ref={nameInput => this.nameInput = nameInput}/>
                     <input placeholder="Price" ref={priceInput => this.priceInput = priceInput}/>
-                    <button>Add</button>
+                    <Button variant="primary">Add</Button>
 
                     <hr/>
 

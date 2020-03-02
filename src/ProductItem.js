@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
 
 class ProductItem extends Component {
@@ -41,7 +43,7 @@ class ProductItem extends Component {
                         <form onSubmit={this.onEditSubmit}>                           
                             <input placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
                             <input placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
-                            <button>Save</button>
+                            <Button>Save</Button>
                         </form>
                     )
                     : (  
@@ -50,8 +52,9 @@ class ProductItem extends Component {
                         {' | '}
                         <span>{price}</span>
                         {' | '}
-                        <button onClick={this.onEdit}>Edit</button>
-                        <button onClick={this.onDelete}>Delete</button>
+                        <Button onClick={this.onEdit}>Edit</Button>
+                        <Button onClick={this.onDelete}>Delete</Button>
+                        <hr></hr>
                         </div>
                     )
                 }
