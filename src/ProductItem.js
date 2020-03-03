@@ -43,7 +43,7 @@ class ProductItem extends Component {
                         <form onSubmit={this.onEditSubmit}>                           
                             <input placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
                             <input placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
-                            <Button>Save</Button>
+                            <Button onClick={this.onEditSubmit}>Save</Button>
                         </form>
                     )
                     : (  
