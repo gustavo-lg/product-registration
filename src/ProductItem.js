@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 
 
 class ProductItem extends Component {
@@ -40,22 +43,38 @@ class ProductItem extends Component {
             <div>
                 {this.state.isEdit
                     ?(
+<<<<<<< HEAD
                         <form onSubmit={this.onEditSubmit}>                           
                             <input placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
                             <input placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
                             <Button onClick={this.onEditSubmit}>Save</Button>
+=======
+                        <form onSubmit={this.onEditSubmit}>  
+                        <InputGroup>                       
+                            <FormControl placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
+                            <FormControl placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
+                            <Button onClick={this.onEditSubmit}>Save</Button>
+                        </InputGroup>
+>>>>>>> 5aa4f363e672a3c94241e417feaabd4c12e7ddc6
                         </form>
                     )
                     : (  
-                        <div>
-                        <span>{name}</span> 
-                        {' | '}
-                        <span>{price}</span>
-                        {' | '}
-                        <Button onClick={this.onEdit}>Edit</Button>
-                        <Button onClick={this.onDelete}>Delete</Button>
-                        <hr></hr>
-                        </div>
+                        <ListGroup>
+                            
+                            <ListGroup.Item variant="dark">
+                                <span>{name}</span> 
+                                {' - '}
+                                
+                                <span>{price}</span>
+                                
+                                <div className="text-right">
+                                <Button onClick={this.onEdit} className="ml-1">Edit</Button>
+                                <Button className="text-left" onClick={this.onDelete} className="ml-1">Delete</Button>
+                                </div>
+                            </ListGroup.Item>
+                            <hr></hr>
+                            
+                        </ListGroup>
                     )
                 }
           </div>
