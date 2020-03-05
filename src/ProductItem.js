@@ -54,15 +54,20 @@ class ProductItem extends Component {
                     : (  
                         <ListGroup>
                             
-                            <ListGroup.Item variant="dark">
-                                <span>{name}</span> 
-                                {' - '}
-                                
-                                <span>{price}</span>
-                                
-                                <div className="text-right">
-                                <Button onClick={this.onEdit} className="ml-1">Edit</Button>
-                                <Button className="text-left" onClick={this.onDelete} className="ml-1">Delete</Button>
+                            <ListGroup.Item>
+                            <div className="row">
+                                <div className="col-md-7">
+                                    <span>{name}</span> 
+                                    {' - '}
+                                    <span>{price}</span>
+                                    
+                                </div>
+                                    <div className="col-md-5">
+                                        <Button onClick={this.onEdit} className="ml-1">Edit</Button>
+                                        
+                                        <Button className="text-left" onClick={this.onDelete} className="ml-1">Delete</Button>
+                                        
+                                    </div>
                                 </div>
                             </ListGroup.Item>
                             <hr></hr>
