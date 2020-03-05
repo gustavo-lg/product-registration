@@ -43,33 +43,31 @@ class ProductItem extends Component {
             <div>
                 {this.state.isEdit
                     ?(
-<<<<<<< HEAD
-                        <form onSubmit={this.onEditSubmit}>                           
-                            <input placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
-                            <input placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
-                            <Button onClick={this.onEditSubmit}>Save</Button>
-=======
                         <form onSubmit={this.onEditSubmit}>  
                         <InputGroup>                       
                             <FormControl placeholder="Name" ref={nameInput => this.nameInput = nameInput} defaultValue={name}/>
                             <FormControl placeholder="Price" ref={priceInput => this.priceInput = priceInput} defaultValue={price}/>
                             <Button onClick={this.onEditSubmit}>Save</Button>
                         </InputGroup>
->>>>>>> 5aa4f363e672a3c94241e417feaabd4c12e7ddc6
                         </form>
                     )
                     : (  
                         <ListGroup>
                             
-                            <ListGroup.Item variant="dark">
-                                <span>{name}</span> 
-                                {' - '}
-                                
-                                <span>{price}</span>
-                                
-                                <div className="text-right">
-                                <Button onClick={this.onEdit} className="ml-1">Edit</Button>
-                                <Button className="text-left" onClick={this.onDelete} className="ml-1">Delete</Button>
+                            <ListGroup.Item>
+                            <div className="row">
+                                <div className="col-md-7">
+                                    <span>{name}</span> 
+                                    {' - '}
+                                    <span>{price}</span>
+                                    
+                                </div>
+                                    <div className="col-md-5">
+                                        <Button onClick={this.onEdit} className="ml-1">Edit</Button>
+                                        
+                                        <Button className="text-left" onClick={this.onDelete} className="ml-1">Delete</Button>
+                                        
+                                    </div>
                                 </div>
                             </ListGroup.Item>
                             <hr></hr>
