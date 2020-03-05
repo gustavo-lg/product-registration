@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './App.css';
 import ProductItem from './ProductItem';
 import AddProduct from "./AddProduct";
+import { ListGroup } from 'react-bootstrap';
 
 const products = [
   {
@@ -80,23 +81,26 @@ class App extends Component {
       <div className="App">
         <h1>Product Manager</h1>
         <hr/>
-        
-        <AddProduct
-          onAdd={this.onAdd}
-        />
-        <h1>Products List</h1>
-        {
-          this.state.products.map(product => {
-            return (
-             <ProductItem
-              key={product.name}
-              {...product}
-              onDelete={this.onDelete}
-              onEditSubmit={this.onEditSubmit}
-             />
-            );
-          })
-        }
+        <ListGroup>
+          <ListGroup.Item>
+            <AddProduct
+              onAdd={this.onAdd}
+            />
+            <h1>Products List</h1>
+            {
+              this.state.products.map(product => {
+                return (
+                <ProductItem
+                  key={product.name}
+                  {...product}
+                  onDelete={this.onDelete}
+                  onEditSubmit={this.onEditSubmit}
+                />
+                );
+              })
+            }
+          </ListGroup.Item>
+        </ListGroup>
       </div>
     );
   }
