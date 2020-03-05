@@ -70,8 +70,7 @@ class ProductItem extends Component {
                                     </div>
                                 </div>
                             </ListGroup.Item>
-                            <hr></hr>
-                            
+                            <hr/>
                         </ListGroup>
                     )
                 }

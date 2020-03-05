@@ -38,7 +38,6 @@ class AddProduct extends Component {
                         </ListGroupItem>    
                     </ListGroup>
                     <hr/>
-
                 </div>
             </form>
         );
